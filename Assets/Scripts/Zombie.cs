@@ -13,11 +13,16 @@ public class Zombie : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Zombie Basladý");
         GameObject targetObject = GameObject.FindGameObjectWithTag("Player");
         if (targetObject != null)
         {
             target = targetObject.transform;
             agent = GetComponent<NavMeshAgent>();
+            if (agent != null)
+            {
+                Debug.Log("NavMash Bulundu");
+            }
             agent.speed = movementSpeed;
             agent.updateRotation = false;
         }
@@ -29,27 +34,15 @@ public class Zombie : MonoBehaviour
 
     private void Update()
     {
-        if (target != null && !isAttacking)
-        {
-            float distance = Vector3.Distance(transform.position, target.position);
 
-            if (distance <= attackRange)
-            {
-                // Saldýrma mesafesine ulaþýldý, karaktere saldýr
-                Attack();
-            }
-            else if (distance <= agent.stoppingDistance)
-            {
-                // Durma mesafesine ulaþýldý, zombi karakteri dur
-                agent.isStopped = true;
-            }
-            else
-            {
-                // Hedefe doðru hareket et
-                agent.isStopped = false;
-                MoveToTarget();
-            }
-        }
+        var objectPositon = GameObject.FindGameObjectWithTag("Player").transform;
+        var zombiObjectPositon = GameObject.FindGameObjectWithTag("Zombi").transform;
+        Debug.Log(objectPositon);
+        Debug.Log(zombiObjectPositon);
+
+
+        zombiObjectPositon.position = Vector3.MoveTowards(zombiObjectPositon.position, (objectPositon.transform.position), .0113F);
+
     }
 
     private void MoveToTarget()

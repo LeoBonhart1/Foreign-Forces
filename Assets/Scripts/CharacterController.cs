@@ -11,36 +11,25 @@ public class CharacterController : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Basladý");
         rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        
         float currentSpeed = isFastWalking ? fastSpeed : normalSpeed;
 
-        
         float horizontalMovement = Input.GetAxis("Horizontal") * currentSpeed * Time.deltaTime;
         transform.Translate(horizontalMovement, 0f, 0f);
 
-       
         float verticalMovement = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
         transform.Translate(0f, 0f, verticalMovement);
 
-        
         if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
-        {
             rb.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
-        }
-
-        
         if (Input.GetKey(KeyCode.LeftShift))
-        {
             isFastWalking = true;
-        }
         else
-        {
             isFastWalking = false;
-        }
     }
 }
