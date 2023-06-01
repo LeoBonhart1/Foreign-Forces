@@ -41,7 +41,7 @@ public class Zombie : MonoBehaviour
         Debug.Log(zombiObjectPositon);
 
 
-        zombiObjectPositon.position = Vector3.MoveTowards(zombiObjectPositon.position, (objectPositon.transform.position), .0113F);
+        zombiObjectPositon.position = Vector3.MoveTowards(zombiObjectPositon.position, (objectPositon.transform.position), .00113F);
 
     }
 

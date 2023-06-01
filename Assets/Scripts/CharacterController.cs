@@ -1,35 +1,37 @@
 using UnityEngine;
-
 public class CharacterController : MonoBehaviour
 {
     public float normalSpeed = 5f;
     public float fastSpeed = 10f;
-    public float jumpForce = 5f;
 
-    private Rigidbody rb;
-    private bool isFastWalking = false;
-
-    private void Start()
-    {
-        Debug.Log("Basladý");
-        rb = GetComponent<Rigidbody>();
-    }
+    private Quaternion _targetRotation;
+    private bool _isFastWalking;
+    public Animator _animator;
 
     private void Update()
     {
-        float currentSpeed = isFastWalking ? fastSpeed : normalSpeed;
+        if (GameManager.Instance.isGameOver) return;
+        Movement();
+    }
 
-        float horizontalMovement = Input.GetAxis("Horizontal") * currentSpeed * Time.deltaTime;
-        transform.Translate(horizontalMovement, 0f, 0f);
+    private void Movement()
+    {
+        _isFastWalking = Input.GetKey(KeyCode.LeftShift);
+        var currentSpeed = _isFastWalking ? fastSpeed : normalSpeed;
+        var horizontalInput = Input.GetAxis("Horizontal");
+        var verticalInput = Input.GetAxis("Vertical");
 
-        float verticalMovement = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
-        transform.Translate(0f, 0f, verticalMovement);
+        var movement = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(rb.velocity.y) < 0.001f)
-            rb.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
-        if (Input.GetKey(KeyCode.LeftShift))
-            isFastWalking = true;
-        else
-            isFastWalking = false;
+        if (movement == Vector3.zero)
+        {
+            _animator.SetBool("Walk", false);
+            return;
+        }
+
+        _animator.SetBool("Walk", true);
+        _targetRotation = Quaternion.LookRotation(movement);
+        transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, 0.15f);
+        transform.Translate(Vector3.forward * (currentSpeed * Time.deltaTime));
     }
 }
