@@ -54,4 +54,9 @@ public class AIZombie : MonoBehaviour
         _animator.SetBool(animationType, false);
         HasAttack = false;
     }
+    public void Die()
+    {
+        gameObject.SetActive(false);
+
+    }
 }

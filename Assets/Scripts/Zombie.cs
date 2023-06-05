@@ -53,10 +53,8 @@ public class Zombie : MonoBehaviour
 
     private void Attack()
     {
-        // Burada karaktere saldýrma iþlemlerini gerçekleþtirin
         Debug.Log("Zombie is attacking!");
 
-        // Saldýrma iþleminin tamamlanmasý için belirli bir süre bekleme yapabilirsiniz
         isAttacking = true;
         Invoke("FinishAttack", 2f);
     }
