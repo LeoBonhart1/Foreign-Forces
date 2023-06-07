@@ -1,6 +1,8 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
+
 
 public class AIZombie : MonoBehaviour
 {
@@ -12,7 +14,8 @@ public class AIZombie : MonoBehaviour
     private NavMeshAgent _navMesh;
     private Animator _animator;
     internal bool HasAttack;
-
+    public int score;
+    public TMP_Text scoreBoard;
     private void Awake()
     {
         _navMesh = GetComponent<NavMeshAgent>();
@@ -56,6 +59,8 @@ public class AIZombie : MonoBehaviour
     }
     public void Die()
     {
+        score += 10;
+        scoreBoard.text = " Score: " + score;
         gameObject.SetActive(false);
 
     }
