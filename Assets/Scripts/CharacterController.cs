@@ -7,6 +7,7 @@ public class CharacterController : MonoBehaviour
     private Quaternion _targetRotation;
     private bool _isFastWalking;
     public Animator _animator;
+    
 
     private void Update()
     {
