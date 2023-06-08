@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67e63692a655a59408984df48c6c0414
+guid: a3d904028b7c1dd49b306aff63fb9602
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: black handle
-    second: {fileID: 2100000, guid: 55dfadcc822f9d84cb13a1f7fdbba630, type: 2}
+      name: lambaalt
+    second: {fileID: 2100000, guid: e688ab7103727a04fa36f3298162da78, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: wood
-    second: {fileID: 2100000, guid: 9b6e62c5e3fb5054cb9f0a0740c3ce38, type: 2}
+      name: lambaust
+    second: {fileID: 2100000, guid: f018572549ca5ab4f863d46ce2588685, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

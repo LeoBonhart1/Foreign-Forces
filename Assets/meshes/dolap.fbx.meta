@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "dolapg\xF6vde"
-    second: {fileID: 2100000, guid: a0fee54720b410a4b8a739f8def2cad4, type: 2}
+    second: {fileID: 2100000, guid: 4964acbc5e1253542bb5c9d0e616fd71, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: dolaphandle
-    second: {fileID: 2100000, guid: d0ae8ba2c4c9fc24b84200aadb16df91, type: 2}
+    second: {fileID: 2100000, guid: b1a1b6f4b8cee8349ace7dc0d960b324, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
