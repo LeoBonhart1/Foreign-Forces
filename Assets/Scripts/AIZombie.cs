@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class AIZombie : MonoBehaviour
 {
@@ -57,6 +58,5 @@ public class AIZombie : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
-
     }
 }
