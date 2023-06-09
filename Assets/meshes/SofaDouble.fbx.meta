@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa758769a42a9694a8e3f19930a781f8
+guid: fce43dcf94ac02448928f83aaf5c4d99
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: DarkWood
-    second: {fileID: 2100000, guid: 9e38221d7ee50a342930dbd5b6052289, type: 2}
+      name: Sofa.003
+    second: {fileID: 2100000, guid: 0651d24043719714f9382069db740ddd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

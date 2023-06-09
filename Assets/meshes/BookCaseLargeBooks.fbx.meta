@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: 4889e88053904c740b3c933f7696995d
+guid: 5acf2895822481d4a9abf5d76ece6b03
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cover2.001
+    second: {fileID: 2100000, guid: caf64865a2848f04bb1e70a8e82539e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cover3.001
+    second: {fileID: 2100000, guid: 32866d4cc0f097e4ca8e78c90033b06e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cover4.001
+    second: {fileID: 2100000, guid: e688ab7103727a04fa36f3298162da78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkWood.005
+    second: {fileID: 2100000, guid: 84d660c2c41643441b9860c3dd4cd5a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pages.001
+    second: {fileID: 2100000, guid: 4ee39e4d8486f8d47bfee949fa14a961, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sofa.001
+    second: {fileID: 2100000, guid: 84d660c2c41643441b9860c3dd4cd5a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood.007
+    second: {fileID: 2100000, guid: 9b6e62c5e3fb5054cb9f0a0740c3ce38, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
