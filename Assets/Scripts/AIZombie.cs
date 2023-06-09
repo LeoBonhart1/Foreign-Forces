@@ -5,6 +5,8 @@ using TMPro;
 
 public class AIZombie : MonoBehaviour
 {
+    public AudioSource zombieDie;
+    public AudioSource zombieHit;
     [SerializeField] private GameObject player;
     [SerializeField] private float attackRange;
     [SerializeField] private float activationRange;
@@ -50,6 +52,7 @@ public class AIZombie : MonoBehaviour
     {
         if (HasAttack) return;
         HasAttack = true;
+        zombieHit.Play();
         _animator.SetBool(animationType, true);
         await Task.Delay(duration);
         _animator.SetBool(animationType, false);
@@ -57,6 +60,7 @@ public class AIZombie : MonoBehaviour
     }
     public void Die()
     {
+        zombieDie.Play();
         gameObject.SetActive(false);
     }
 }
